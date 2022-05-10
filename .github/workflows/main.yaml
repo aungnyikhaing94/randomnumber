@@ -38,7 +38,7 @@ jobs:
         uses: slackapi/slack-github-action@v1.18.0
         with:
           # For posting a rich message using Block Kit
-          payload: 
+          payload: |
             {
               "text": "Name: Aung Nyi Khaing\nMatriculation: A0249495L\nEmail: aungnyikhaing94@gmail.com\nRepo: git://github.com:aungnyikhaing94/randomnumber.git\nImage name: aungnyikhaing1629/randomnumber:${{github.event.release.tag_name}}\nImage url: https://hub.docker.com/repository/docker/aungnyikhaing1629/randomnumber"
             }

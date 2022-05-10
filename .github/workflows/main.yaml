@@ -40,7 +40,7 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
           {
-            "text": "Name:Aung Nyi Khaing\nMatriculation:abc123\nEmail:aungnyikhaing94@gmail.com\nRepo:git://github.com:aungnyikhaing94/randomnumber.git\nImage name:aungnyikhaing1629/randomnumber:${{github.event.release.tag_name}}\nImage url:https://hub.docker.com/repository/docker/aungnyikhaing1629/randomnumber"
+            "text": "Name:Aung Nyi Khaing\nMatriculation:A0249495L\nEmail:aungnyikhaing94@gmail.com\nRepo:git://github.com:aungnyikhaing94/randomnumber.git\nImage name:aungnyikhaing1629/randomnumber:${{github.event.release.tag_name}}\nImage url:https://hub.docker.com/repository/docker/aungnyikhaing1629/randomnumber"
           }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

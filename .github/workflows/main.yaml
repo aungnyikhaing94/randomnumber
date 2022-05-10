@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-      name: Checkout
-      uses: actions/checkout@v3
-      with:
-        ref: ${{github.event.release.tag_name}}
+        name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{github.event.release.tag_name}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -33,15 +33,15 @@ jobs:
           tags: aungnyikhaing1629/randomnumber:${{github.event.release.tag_name}}
 
       - 
-      name: Send custom JSON data to Slack workflow
-      id: slack
-      uses: slackapi/slack-github-action@v1.18.0
-      with:
+        name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
           # For posting a rich message using Block Kit
-        payload: |
+          payload: |
           {
             "text": "Name:Aung Nyi Khaing\nMatriculation:abc123\nEmail:aungnyikhaing94@gmail.com\nRepo:git://github.com:aungnyikhaing94/randomnumber.git\nImage name:aungnyikhaing1629/randomnumber:${{github.event.release.tag_name}}\nImage url:https://hub.docker.com/repository/docker/aungnyikhaing1629/randomnumber"
           }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
